@@ -17,8 +17,8 @@ var corsOptions = {
 };
 
 
- app.use(cors(Cors.ALL_ORIGINS));
-// app.use(cors());
+ // app.use(cors(Cors.ALL_ORIGINS));
+ app.use(cors(corsOptions));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
