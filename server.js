@@ -12,7 +12,7 @@ const errorHandler = require('./_helpers/error-handler');
 
 var corsOptions = {
     // origin: "http://localhost:4200",
-    origin: "http://angularcricketapp.s3-website.ap-south-1.amazonaws.com/",
+    origin: " ",
     
 };
 
