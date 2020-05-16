@@ -10,11 +10,12 @@ const errorHandler = require('./_helpers/error-handler');
 
 
 var corsOptions = {
-    // origin: "http://localhost:1000"
-    origin: "http://13.232.124.242:5000"
+    //origin: "http://localhost:4200"
+    origin: "*"
+
 };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -25,13 +26,17 @@ app.use(session({
 	saveUninitialized: true
 }));
 
-/*
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    if(req.method==='OPTIONS'){
+        res.heder("Access-Control-Allow-Method","PUT,POST,PATCH,DELETE,GET");
+    }
+    
     next();
 });
-*/
+
 
 app.get('/', function(req, res) {
     res.json({ message: 'welcome to our upload module apis' });
