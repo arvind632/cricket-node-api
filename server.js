@@ -9,12 +9,15 @@ var app = express();
 const errorHandler = require('./_helpers/error-handler');
 
 
+/*
 var corsOptions = {
-    // origin: "http://localhost:1000",
-    origin: "http://angularcricketapp.s3-website.ap-south-1.amazonaws.com/",
+    origin: "http://localhost:1000",
+    
 };
+*/
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
