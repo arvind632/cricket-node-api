@@ -36,6 +36,7 @@ exports.playerCreate = (req, res) => {
         message: "First name is required"
       });
       return;
+    
   }
   else if(!req.body.lastName){
     res.status(401).send({
@@ -43,6 +44,7 @@ exports.playerCreate = (req, res) => {
       message: "Last name is required"
     });
     return;
+  
   }
   
     else{
