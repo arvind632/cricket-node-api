@@ -30,31 +30,29 @@ exports.history = (req, res) => {
 // Create player Api
 exports.playerCreate = (req, res) => {
   // Validate request
-  if (!req.body.firstName){
-      res.status(401).send({
+  if (!req.body.firstName)
+      res.status(400).send({
         success:false,
         message: "First name is required"
       });
-      return;
+      
     
-  }
-  else if(!req.body.lastName){
-    res.status(401).send({
+  
+  else if(!req.body.lastName)
+    res.status(400).send({
       success:false,
       message: "Last name is required"
     });
-    return;
+    
   
-  }
-  
-    else{
+    else
       var player = {
             firstName : req.body.firstName,
             LastName : req.body.lastName,
             imageUri : req.body.imageUri,
             PlayerJerseyNumber : req.body.PlayerJerseyNumber
           }
-    }
+    
 
     // Save player in the database
     db.query('insert into player SET ?', player, (error,result,fields)=>{
