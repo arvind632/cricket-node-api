@@ -35,7 +35,8 @@ exports.playerCreate = (req, res) => {
             firstName : req.body.firstName,
             LastName : req.body.lastName,
             imageUri : req.body.imageUri,
-            PlayerJerseyNumber : req.body.PlayerJerseyNumber
+            PlayerJerseyNumber : req.body.PlayerJerseyNumber,
+            Country:'India'
   }
   // Save player in the database
   db.query('insert into player SET ?', player, (error,result)=>{
